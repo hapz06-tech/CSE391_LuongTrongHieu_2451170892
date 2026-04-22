@@ -138,3 +138,125 @@ Text C Text D                                                       (Inline/Stro
 * Lỗi 10: Dòng 42: Thẻ `<p>` trong footer chưa đóng → Thêm `</p>`.
 
 **File**: [debug.html](debug.html)
+
+### Bài B4 - Phân tích trang web thật
+#### Phân tích trang web tiki.vn
+
+**Hình ảnh**:
+![tiki.vn](screenshots/tiki.png)
+
+**3 Thẻ semantic được sử dụng đúng:**
+
+1. `<header id="main-header">`: Được dùng để bao bọc phần đầu trang (logo, thanh tìm kiếm).
+
+2. `<main>`: Thẻ này bao bọc toàn bộ nội dung chính của trang web, giúp công cụ tìm kiếm xác định khu vực nội dung quan trọng nhất.
+
+3. `<footer> id="main-footer"`: Được dùng để chứa các thông tin liên hệ và chính sách ở cuối trang.
+
+**2 Thẻ chưa tối ưu semantic (Dùng <div> thay thế):**
+
+1. Khu vực khuyến mãi: Đoạn `<div data-view-id="home_deal">` lẽ ra nên được thay bằng thẻ `<section>` để chỉ rõ đây là một phân đoạn nội dung riêng biệt.
+
+2. Vị trí của Footer: Trong ảnh, thẻ `<footer>` đang bị nằm sâu bên trong nhiều lớp thẻ `<div>` và thẻ `<main>`. Thông thường, footer chính của trang nên là con trực tiếp của thẻ `<body>` hoặc nằm ngoài `<main>` để phân tách rõ ràng cấu trúc.
+
+#### Phân tích thẻ table
+
+*Không tìm thấy layout table trên trang tiki.vn*
+
+#### 3. Phân tích thẻ <form> (Thanh tìm kiếm)
+
+**Action và Method:**
+
+Action: /search (đường dẫn xử lý tìm kiếm).
+
+Method: get (vì từ khóa tìm kiếm sẽ hiển thị trên URL, ví dụ: tiki.vn/search?q=iphone).
+
+**Input types được dùng:**
+
+type="text": Dành cho ô nhập từ khóa.
+
+## PHẦN C — SUY LUẬN
+### Câu C1 — Thiết kế cấu trúc
+``` html
+<header> <!--Dùng để bọc các yếu tố mang tính giới thiệu hoặc điều hướng toàn cục của trang web-->
+    <nav aria-label="Main Navigation"> <!-- nav vì nó là thanh điều hướng-->
+        <ul>
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/products">Sản phẩm</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main> <!--main vì nó là nơi chứa nội dung chính của trang-->
+
+    <nav aria-label="breadcrumb"> <!--Thanh điều hướng nên dùng nav-->
+        <ol>
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/mobile">Điện thoại</a></li>
+            <li>iPhone 16</li>
+        </ol>
+    </nav>
+
+    <article class="product-detail"> <!--article vì nó một sản phẩm độc lập-->
+        
+        <section class="gallery"> <!--section vì nó là một phần nội dung của sản phẩm-->
+            <figure> <!--figure là phần ghi chú nội dung-->
+                <img src="img1.jpg" alt="iPhone 16 màu Xanh">
+                <img src="img2.jpg" alt="iPhone 16 góc nghiêng">
+                <figcaption>Hình ảnh thực tế iPhone 16</figcaption> <!--figcaption phần ghi chú-->
+            </figure>
+        </section>
+
+        <section class="purchase-info">
+            <h1>iPhone 16 128GB</h1>
+            
+            <p class="price">Giá: <strong>22.990.000đ</strong></p>
+            
+            <div class="rating">⭐⭐⭐⭐⭐ (500 đánh giá)</div>
+
+            <section class="desc">
+                <h2>Mô tả sản phẩm</h2>
+                <p>iPhone 16 sở hữu chip A18 với hiệu năng vượt trội...</p>
+            </section>
+        </section>
+
+        <section class="specs">
+            <h2>Thông số kỹ thuật</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th scope="row">Màn hình</th>
+                        <td>6.1 inch</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="reviews">
+            <h2>Bình luận từ khách hàng</h2>
+            <article class="comment">
+                <p><strong>Nguyễn Văn A:</strong> Máy rất đẹp, giao hàng nhanh!</p>
+            </article>
+        </section>
+
+    </article>
+
+    <aside class="sidebar"> <!--aside phần nội dung có liên quan đến sản phẩm-->
+        <h3>Sản phẩm tương tự</h3>
+        <ul>
+            <li><a href="/iphone-16-pro">iPhone 16 Pro</a></li>
+        </ul>
+    </aside>
+
+</main>
+
+<footer> <!--Cung cấp thông tin về tác giả, trang web, bản quyền,...-->
+    <p>&copy; 2026 ShopTLU. All rights reserved.</p>
+</footer>
+```
+
+### Câu C2 — So sánh & Tranh luận
+
+Quan điểm dùng `<div>` cho mọi thứ để tiết kiệm thời gian học thẻ mới là một tư duy khá phổ biến, vì đúng là chúng ta có thể tạo ra giao diện y hệt nhau bằng CSS. Tuy nhiên, dưới góc độ kỹ thuật web hiện đại, đây là một thói quen gây hại cho chất lượng dự án. Học vài thẻ semantic không làm tốn thời gian, mà thực chất là cách làm việc thông minh hơn. Thứ nhất, về mặt SEO (Tối ưu hóa công cụ tìm kiếm): Các bot của Google bị "mù" giao diện, chúng chỉ hiểu nội dung thông qua mã HTML. Khi bạn dùng thẻ `<main>` hay `<article>`, bạn đang trực tiếp nói với Google rằng: "Đây là nội dung quan trọng nhất, hãy ưu tiên lập chỉ mục nó". Nếu chỉ dùng `<div class="content">`, robot sẽ coi khối đó ngang hàng với mọi khối `<div>` vô nghĩa khác, khiến thứ hạng trang web sụt giảm. Thứ hai, về Accessibility (Khả năng truy cập): Người khiếm thị sử dụng trình đọc màn hình (Screen Readers) để lướt web. Công cụ này được lập trình để nhận diện các điểm neo ngữ nghĩa. Nó có thể giúp người dùng nhảy phím tắt thẳng đến thẻ `<nav>` (menu) hoặc `<footer>`, nhưng sẽ hoàn toàn vô dụng và bắt người dùng phải nghe đọc từng dòng một trong một "ma trận" toàn thẻ `<div>`.
+
+**Một ví dụ cụ thể:** Nếu bạn tự chế một nút bấm bằng `<div class="btn" onclick="...">`, bạn sẽ phải tự viết thêm code Javascript để bắt sự kiện phím Enter/Space, tự thêm thuộc tính tabindex để điều hướng bằng bàn phím, tự thêm aria-role. Trong khi đó, chỉ cần dùng đúng thẻ `<button>`, trình duyệt đã tích hợp sẵn toàn bộ những tính năng đó. Việc dùng `<div>` trong trường hợp này thực chất mới là thứ làm bạn tốn thời gian hơn.
