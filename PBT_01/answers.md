@@ -3,12 +3,12 @@
 ## PHẦN A — KIỂM TRA ĐỌC HIỂU
 ### Câu A1 - HTTP & Browser
 **Câu 1: các bước để truy cập vào trang `https://shopee.vn`**
-1. Request xuất phát từ Laptop -> đi qua router Wifi nhà trọ
-2. -> qua nhà mạng VNPT(Viettel, FPT,..) -> xuyên qua cáp quang
-3. -> Đến data center của Shopee ở Singapore
-4. -> Server nhận và xử lý request truy cập trang chủ
-5. -> Respone chạy ngược lại: cáp quang -> VNPT -> Router -> Laptop
-6. -> Trình duyệt nhận file HTML, CSS, JS -> render ra giao diện -> Nhìn thấy giao diện trên màn hình laptop.
+
+Bước 1 (DNS Lookup): Trình duyệt tìm kiếm địa chỉ IP của domain shopee.vn thông qua hệ thống phân giải tên miền (DNS).
+Bước 2 (TCP/IP Handshake): Trình duyệt thiết lập kết nối TCP với máy chủ của Shopee.
+Bước 3 (HTTP Request): Trình duyệt gửi một yêu cầu HTTP GET đến máy chủ để lấy dữ liệu trang web.
+Bước 4 (HTTP Response): Máy chủ xử lý yêu cầu và trả về phản hồi HTTP chứa mã nguồn HTML.
+Bước 5 (Browser Rendering): Trình duyệt phân tích cú pháp (parse) HTML, tải thêm CSS/JS/Hình ảnh và vẽ (render) trang web lên màn hình.
 
 **Nguồn tham khảo**: [tuan_1_html5/01_introduction_html_universe.md](https://github.com/ktzung/CCC_Frontend/blob/main/tuan_1_html5/01_introduction_html_universe.md)
 
@@ -26,7 +26,7 @@ Trong Devtools của chrome, tab **Network** cho thấy:
 ![Status code](screenshots/status.png)
 
 **Tổng thời gian load trang**
-![Thời gian load trang](screenshots/Runtime.png)
+![Thời gian load trang](screenshots/Load.png)
 
 **Request trả về file CSS**
 ![Request file CSS](screenshots/RequestCSS.png)
@@ -93,15 +93,15 @@ Trang web mắc lỗi lạm dụng thẻ `<div>`. Thẻ `<div>` là thẻ trung 
 
 ```
 +-------------------------------------------------------+
-| Hộp 1                                                                 | (Block chiếm hết 1 dòng)
+| Hộp 1                                                 | (Block chiếm hết 1 dòng)
 +-------------------------------------------------------+
-Text A Text B                                                        (Inline nằm cùng hàng)
+Text A Text B                                             (Inline nằm cùng hàng)
 +-------------------------------------------------------+
-| Hộp 2                                                                | (Block chiếm hết 1 dòng)
+| Hộp 2                                                 | (Block chiếm hết 1 dòng)
 +-------------------------------------------------------+
-Text C Text D                                                       (Inline/Strong cùng hàng)
+Text C Text D                                             (Inline/Strong cùng hàng)
 +-------------------------------------------------------+
-| Hộp 3                                                                | (Block chiếm hết 1 dòng)
+| Hộp 3                                                 | (Block chiếm hết 1 dòng)
 +-------------------------------------------------------+
 ```
 * Thẻ Block (`<div>`): Luôn bắt đầu trên một dòng mới và kéo dài đến hết chiều rộng màn hình.
