@@ -20,5 +20,30 @@
 ### Câu A2 — Dự đoán Layout (Flexbox & Grid)
 
 **Trường hợp 1:** 4 items nằm trên một hàng duy nhất, mỗi item chiếm 25% chiều rộng container.
+
+Trường hợp 1:
 ```text
 [ Item 1 ][ Item 2 ][ Item 3 ][ Item 4 ]
+```
+Trường hợp 2:
+```text
+[ Item 1 ]   [ Item 2 ]
+[ Item 3 ]   [ Item 4 ]
+[ Item 5 ]   [ Item 6 ]
+```
+Tường hợp 3:
+```text
+| [Logo]      [Menu]      [Buttons] |
+```
+
+Trường hợp 4:
+```text
+| 200px | <--- 1fr (Auto) ---> | 200px |
+```
+
+Trường hợp 5:
+```text
+[ 1 ] [ 2 ] [ 3 ]
+[ 4 ] [ 5 ] [ 6 ]
+[ 7 ] [   ] [   ]
+```
