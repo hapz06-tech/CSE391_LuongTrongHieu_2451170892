@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Playground</title>
+    <link rel="stylesheet" href="css/positioning.css">
+</head>
+
+<body>
+
+    <header class="fixed-header">
+        <div class="logo">MYLOGO</div>
+        <nav class="navigation">
+            <a href="#">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <aside class="sticky-sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li>Điện thoại</li>
+                <li>Laptop</li>
+                <li>Phụ kiện</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Sản phẩm nổi bật</h2>
+
+            <div class="product-card">
+                <span class="badge-hot">HOT</span>
+                <img src="https://via.placeholder.com/200" alt="Sản phẩm">
+                <div class="product-info">
+                    <h4>iPhone 15 Pro Max</h4>
+                    <p>Giá: 30.000.000đ</p>
+                </div>
+            </div>
+
+            <div class="scroll-spacer">
+                <p>Cuộn xuống để thấy Sidebar dính và Header cố định...</p>
+            </div>
+        </main>
+    </div>
+
+    <button class="scroll-top">↑</button>
+
+</body>
+
+</html>
