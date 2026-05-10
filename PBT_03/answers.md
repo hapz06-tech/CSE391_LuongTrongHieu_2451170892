@@ -76,6 +76,42 @@
 * Khi dùng `border-box`, tổng chiều rộng là: $250px + 500px + 250px = 1000px$ (Khớp hoàn hảo với container).
 * Nếu dùng `content-box`, tổng chiều rộng sẽ bị đội lên thành: $(250+30) + (500+40) + (250+30) = 1100px$. Điều này khiến các cột bị tràn và vỡ layout (đẩy xuống dòng).
 
+### Bài B3 - Specificity Battle
+
+#### 1. Danh sách 10 CSS Rules và Specificity Score
+
+| STT | CSS Rule | Color | Specificity Score (ID, Class, Element) |
+| :--- | :--- | :--- | :--- |
+| 1 | `*` | silver | 0, 0, 0 |
+| 2 | `p` | red | 0, 0, 1 |
+| 3 | `.text` | orange | 0, 1, 0 |
+| 4 | `p.text` | gold | 0, 1, 1 |
+| 5 | `.text.highlight` | green | 0, 2, 0 |
+| 6 | `p.text.highlight` | teal | 0, 2, 1 |
+| 7 | `#demo` | blue | 1, 0, 0 |
+| 8 | `p#demo` | navy | 1, 0, 1 |
+| 9 | `#demo.text.highlight` | purple | 1, 2, 0 |
+| 10 | `p#demo.text.highlight` | crimson | 1, 2, 1 |
+
+#### 2. Element cuối cùng hiển thị màu gì? Tại sao?
+
+**Kết quả:** Element `<p id="demo" class="text highlight">Hello World</p>` sẽ hiển thị màu **crimson** (đỏ thẫm).
+
+**Tại sao:** Trình duyệt sẽ luôn ưu tiên áp dụng quy tắc có điểm Specificity (độ đặc tả) cao nhất. Trong 10 quy tắc trên, quy tắc `p#demo.text.highlight` mang điểm số `1, 2, 1` (gồm 1 ID, 2 Classes, 1 Element). Đây là mức Specificity lớn nhất trong danh sách, nên màu `crimson` sẽ ghi đè tất cả các màu thuộc các quy tắc khác, bất kể chúng được viết ở đâu trong file.
+
+#### 3. Chụp screenshot kết quả
+
+*(Lưu ý: Bạn hãy tự tải các file `specificity.html` và `specificity.css` về máy cùng một thư mục, mở file `specificity.html` bằng trình duyệt (Chrome, Edge, Safari...) và sử dụng công cụ của máy tính để chụp lại ảnh màn hình nhé. Kết quả hiển thị sẽ là dòng chữ "Hello World" màu đỏ thẫm.)*
+
+#### 4. Thay đổi thứ tự rules trong CSS file. Kết quả có đổi không? Giải thích.
+
+**Kết quả:** KHÔNG thay đổi.
+
+**Giải thích:** 
+Thứ tự từ trên xuống dưới trong file CSS (source order / nguyên tắc cascading) chỉ mang tính quyết định khi có hai hoặc nhiều rules **có cùng một mức specificity score**. Khi xảy ra tình huống hòa điểm đó, quy tắc nào được khai báo sau cùng sẽ "thắng" và được áp dụng.
+
+Tuy nhiên, trong bài tập này, quy tắc số 10 (`p#demo.text.highlight`) có điểm Specificity cao tuyệt đối (1,2,1) và khác biệt hoàn toàn so với 9 quy tắc còn lại. Vì độ ưu tiên (specificity) luôn được trình duyệt xét trước tiên, nên dù bạn có đưa quy tắc này lên dòng đầu tiên của file CSS, nó vẫn được chọn làm quy tắc áp dụng cuối cùng để hiển thị màu sắc.
+
 ## PHẦN C — DEBUG & SUY LUẬN
 
 ### Câu C1 — Debug CSS Layout

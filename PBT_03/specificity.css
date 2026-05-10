@@ -1,0 +1,19 @@
+* { color: silver; }   
+
+p { color: red; } 
+
+.text { color: orange; }
+
+p.text { color: gold; } 
+
+.text.highlight { color: green; }
+
+p.text.highlight { color: teal; }      
+
+#demo { color: blue; } 
+
+p#demo { color: navy; }
+
+#demo.text.highlight { color: purple; } 
+
+p#demo.text.highlight { color: crimson; }
