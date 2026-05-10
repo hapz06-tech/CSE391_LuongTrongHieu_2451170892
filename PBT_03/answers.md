@@ -60,6 +60,22 @@
 
 ---
 
+## PHẦN B
+
+### Kết quả đo lường Box Model (Câu B2)
+
+*   **Hộp 1 (content-box):** Chiều rộng thực tế = **350px** (đo từ DevTools).
+*   **Hộp 2 (border-box):** Chiều rộng thực tế = **300px** (đo từ DevTools).
+
+**Giải thích sự khác biệt:**
+1. Với **content-box** (mặc định), chiều rộng thực tế được tính bằng: `width + padding + border`. 
+   Công thức: $300 + (20 \times 2) + (5 \times 2) = 350px$.
+2. Với **border-box**, chiều rộng khai báo đã bao gồm cả phần đệm (padding) và đường viền (border). Trình duyệt sẽ tự động co phần nội dung bên trong lại để tổng chiều rộng luôn đúng bằng $300px$.
+
+**Phần 2 - Layout 3 cột:**
+* Khi dùng `border-box`, tổng chiều rộng là: $250px + 500px + 250px = 1000px$ (Khớp hoàn hảo với container).
+* Nếu dùng `content-box`, tổng chiều rộng sẽ bị đội lên thành: $(250+30) + (500+40) + (250+30) = 1100px$. Điều này khiến các cột bị tràn và vỡ layout (đẩy xuống dòng).
+
 ## PHẦN C — DEBUG & SUY LUẬN
 
 ### Câu C1 — Debug CSS Layout
