@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-API Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Tổng Quan Dữ Liệu</h1>
+            <div class="controls">
+                <button id="refreshBtn">Làm mới tất cả</button>
+                <span id="loadTime"></span>
+            </div>
+        </header>
+        
+        <main class="widget-grid">
+            <div class="widget" id="widget-0">
+                <h2>Bài viết mới (JSONPlaceholder)</h2>
+                <div class="widget-state loading-state">
+                    <div class="spinner"></div>
+                </div>
+                <div class="widget-state error-state hidden"></div>
+                <div class="widget-state success-state hidden" id="content-0"></div>
+            </div>
+
+            <div class="widget" id="widget-1">
+                <h2>Ảnh Cún Ngẫu Nhiên (Dog API)</h2>
+                <div class="widget-state loading-state">
+                    <div class="spinner"></div>
+                </div>
+                <div class="widget-state error-state hidden"></div>
+                <div class="widget-state success-state hidden" id="content-1"></div>
+            </div>
+
+            <div class="widget" id="widget-2">
+                <h2>Thông tin Quốc gia (REST Countries)</h2>
+                <div class="widget-state loading-state">
+                    <div class="spinner"></div>
+                </div>
+                <div class="widget-state error-state hidden"></div>
+                <div class="widget-state success-state hidden" id="content-2"></div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
