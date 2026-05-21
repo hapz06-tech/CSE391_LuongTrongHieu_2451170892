@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailwindCSS Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600 dark:text-blue-400">ShopTrend</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Trang chủ</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Sản phẩm</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Liên hệ</a>
+                    <button onclick="document.documentElement.classList.toggle('dark')" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">🌙</button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="document.documentElement.classList.toggle('dark')" class="p-2 mr-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">🌙</button>
+                    <button class="text-gray-600 dark:text-gray-300 text-2xl">☰</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-gray-900 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://via.placeholder.com/1920x600');"></div>
+        <div class="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Bộ Sưu Tập Mùa Hè 2026</h1>
+            <p class="mt-6 text-xl max-w-3xl text-gray-300">Khám phá ngay những thiết kế mới nhất mang phong cách hiện đại, năng động với ưu đãi giảm giá lên đến 50%.</p>
+            <div class="mt-10">
+                <a href="#" class="inline-block bg-blue-600 border border-transparent rounded-md py-3 px-8 font-medium hover:bg-blue-700 transition-colors shadow-lg">Mua Ngay</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-3xl font-extrabold text-center mb-12">Sản Phẩm Nổi Bật</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative group">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">Sale</span>
+                <img src="https://via.placeholder.com/300x300" alt="Sản phẩm" class="w-100 h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Áo T-Shirt Unisex</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Chất liệu 100% cotton cao cấp thoáng mát.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-red-500 dark:text-red-400 font-bold">250.000đ</span>
+                        <span class="text-sm text-gray-400 line-through">500.000đ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative group">
+                <img src="https://via.placeholder.com/300x300" alt="Sản phẩm" class="w-100 h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Quần Jean Slimfit</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Form dáng ôm vừa vặn, co giãn thoải mái.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-blue-600 dark:text-blue-400 font-bold">450.000đ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative group">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">Sale</span>
+                <img src="https://via.placeholder.com/300x300" alt="Sản phẩm" class="w-100 h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Áo Khoác Bomber</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Thiết kế thời thượng, phong cách đường phố.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-red-500 dark:text-red-400 font-bold">590.000đ</span>
+                        <span class="text-sm text-gray-400 line-through">850.000đ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative group">
+                <img src="https://via.placeholder.com/300x300" alt="Sản phẩm" class="w-100 h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Váy Nữ Dáng Xòe</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Nhẹ nhàng, quyến rũ thích hợp dạo phố.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-blue-600 dark:text-blue-400 font-bold">390.000đ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 dark:bg-gray-950 dark:text-gray-400 border-t border-gray-700 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">ShopTrend</h3>
+                <p class="text-sm">Hệ thống phân phối thời trang phong cách hàng đầu dành cho giới trẻ.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Chính Sách</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Chính sách bảo mật</a></li>
+                    <li><a href="#" class="hover:text-white">Chính sách đổi trả</a></li>
+                    <li><a href="#" class="hover:text-white">Điều khoản dịch vụ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Hỗ Trợ</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Hướng dẫn chọn size</a></li>
+                    <li><a href="#" class="hover:text-white">Hệ thống cửa hàng</a></li>
+                    <li><a href="#" class="hover:text-white">Trung tâm hỗ trợ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Liên Hệ</h4>
+                <p class="text-sm">📍 Địa chỉ: Hà Nội, Việt Nam</p>
+                <p class="text-sm mt-1">📞 Hotline: 1900 xxxx</p>
+            </div>
+        </div>
+        <div class="text-center py-6 border-t border-gray-700 text-xs">
+            &copy; 2026 ShopTrend. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
