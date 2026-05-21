@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registerForm">
+            <h2>Đăng Ký Tài Khoản</h2>
+            
+            <div class="form-control">
+                <label for="username">Họ và tên</label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" placeholder="Nhập họ và tên">
+                    <span class="status-icon" id="nameIcon"></span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="example@gmail.com">
+                <small class="error-msg" id="emailError"></small>
+            </div>
+
+            <div class="form-control">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu">
+                <div class="strength-meter">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+                <small id="strengthText"></small>
+            </div>
+
+            <div class="form-control">
+                <label for="confirmPwd">Xác nhận mật khẩu</label>
+                <div class="input-wrapper">
+                    <input type="password" id="confirmPwd" placeholder="Nhập lại mật khẩu">
+                    <span class="status-icon" id="confirmIcon"></span>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="phone">Số điện thoại</label>
+                <div class="input-wrapper">
+                    <input type="text" id="phone" placeholder="0901-234-567" maxlength="12">
+                    <span class="status-icon" id="phoneIcon"></span>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>Đăng Ký</button>
+        </form>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>🎉 Đăng ký thành công!</h3>
+            <div id="modalData"></div>
+            <button id="closeModal">Đóng</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
