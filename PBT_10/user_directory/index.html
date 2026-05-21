@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Quản Lý Người Dùng</h1>
+            <div class="toolbar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên hoặc email...">
+                <button id="addBtn" class="btn btn-primary">Thêm User Mới</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="loading" class="loading-container hidden">
+                <div class="spinner"></div>
+                <p>Đang tải dữ liệu...</p>
+            </div>
+            
+            <div id="usersGrid" class="users-grid"></div>
+        </main>
+    </div>
+
+    <div id="userModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">Thêm User</h2>
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Điện thoại</label>
+                    <input type="text" id="userPhone" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancelBtn" class="btn btn-secondary">Hủy</button>
+                    <button type="submit" id="saveBtn" class="btn btn-primary">Lưu lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
