@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">ShopQuầnÁo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm">
+                    <button class="btn btn-outline-light" type="submit">Tìm</button>
+                </form>
+                <div class="text-white position-relative cursor-pointer">
+                    🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background: url('https://via.placeholder.com/1920x600') center/cover; height: 500px;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Bộ Sưu Tập Mùa Hè</h5>
+                    <p>Giảm giá lên đến 50% cho tất cả các mặt hàng.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background: url('https://via.placeholder.com/1920x600') center/cover; height: 500px;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Phong Cách Xu Hướng</h5>
+                    <p>Khám phá những thiết kế mới nhất vừa cập bến.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background: url('https://via.placeholder.com/1920x600') center/cover; height: 500px;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Phụ Kiện Chất Lượng</h5>
+                    <p>Hoàn thiện outfit của bạn với ưu đãi mua 1 tặng 1.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4 fw-bold">Sản Phẩm Nổi Bật</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 position-relative shadow-sm">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                    <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Sản phẩm">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Áo Thun Nam Basic</h5>
+                        <p class="card-text text-muted">Chất liệu cotton co giãn thoáng mát cực kỳ năng động.</p>
+                        <p class="fw-bold text-danger mt-auto">250.000đ</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 position-relative shadow-sm">
+                    <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Sản phẩm">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Quần Jeans Slimfit</h5>
+                        <p class="card-text text-muted">Form dáng ôm vừa vặn tôn dáng tôn da dễ phối đồ.</p>
+                        <p class="fw-bold text-dark mt-auto">450.000đ</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 position-relative shadow-sm">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                    <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Sản phẩm">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Áo Khoác Bomber</h5>
+                        <p class="card-text text-muted">Phong cách đường phố chất lừ giữ ấm hiệu quả.</p>
+                        <p class="fw-bold text-danger mt-auto">550.000đ</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 position-relative shadow-sm">
+                    <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Sản phẩm">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Váy Nữ Dáng Xòe</h5>
+                        <p class="card-text text-muted">Nhẹ nhàng nữ tính phù hợp đi chơi và đi dạo phố.</p>
+                        <p class="fw-bold text-dark mt-auto">380.000đ</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#quickViewModal">Xem nhanh</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Chi Tiết Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-shadow="none" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://via.placeholder.com/300x300" class="img-fluid rounded" alt="Chi tiết">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Thông tin sản phẩm</h4>
+                            <p class="text-danger fw-bold h5">Giá bán: Liên hệ</p>
+                            <p class="text-muted small">Sản phẩm chất lượng cao chuẩn form đường may tỉ mỉ, cam kết chính hãng 100%.</p>
+                            <div class="mt-3">
+                                <button class="btn btn-success w-100">Thêm vào giỏ hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold mb-3">Về chúng tôi</h5>
+                    <p class="small text-muted">Hệ thống thời trang cung cấp các mặt hàng đa dạng xu hướng hàng đầu hiện nay.</p>
+                </div>
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold mb-3">Chính sách</h5>
+                    <ul class="list-unstyled small text-muted">
+                        <li><a href="#" class="text-decoration-none text-muted">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Vận chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold mb-3">Hỗ trợ</h5>
+                    <ul class="list-unstyled small text-muted">
+                        <li><a href="#" class="text-decoration-none text-muted">Trung tâm trợ giúp</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Hướng dẫn chọn size</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold mb-3">Liên hệ</h5>
+                    <p class="small text-muted mb-1">📍 Địa chỉ: Hà Nội, Việt Nam</p>
+                    <p class="small text-muted mb-1">📞 Hotline: 1900 xxxx</p>
+                    <p class="small text-muted">✉️ Email: support@shop.com</p>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4 mb-3">
+            <p class="text-center small text-muted mb-0">&copy; 2026 ShopQuầnÁo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
