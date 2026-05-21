@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #74b9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.weather-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #2d3436;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.history-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.history-section p {
+    font-size: 14px;
+    color: #636e72;
+    margin-bottom: 8px;
+}
+
+#historyList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.history-item {
+    background: #dfe6e9;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #2d3436;
+}
+
+.state-container {
+    padding: 20px;
+    border-radius: 8px;
+    background: #f1f2f6;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #dfe6e9;
+    border-top: 4px solid #0984e3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#errorState {
+    background: #fab1a0;
+    color: #d63031;
+    font-weight: bold;
+}
+
+#successState {
+    background: transparent;
+}
+
+#cityName {
+    font-size: 28px;
+    color: #2d3436;
+    margin-bottom: 5px;
+}
+
+#weatherDesc {
+    color: #636e72;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.weather-main h1 {
+    font-size: 48px;
+    color: #0984e3;
+    margin-bottom: 15px;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #2d3436;
+    font-size: 16px;
+}
