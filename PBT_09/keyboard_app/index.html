@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Shortcuts & Accessibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Trình Quản Lý Phím Tắt</h1>
+        <p>Gợi ý: Nhấn <kbd>Ctrl</kbd> + <kbd>K</kbd> để mở Command Palette</p>
+    </header>
+
+    <main>
+        <section class="gallery-section" aria-labelledby="galleryTitle">
+            <h2 id="galleryTitle">Thư viện ảnh</h2>
+            <p class="help-text">Dùng phím <kbd>1</kbd>-<kbd>9</kbd> để nhảy tới ảnh. Khi xem ảnh dùng <kbd>←</kbd> <kbd>→</kbd> <kbd>Space</kbd> <kbd>Esc</kbd></p>
+            
+            <div id="gallery" class="gallery-grid" role="region" aria-label="Danh sách hình ảnh">
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Trình xem ảnh phóng to" hidden>
+        <div class="modal-content">
+            <button id="closeGallery" aria-label="Đóng thư viện ảnh (Phím Escape)">×</button>
+            <img id="modalImage" src="" alt="">
+            <p id="modalCaption" aria-live="polite"></p>
+            <div class="gallery-controls">
+                <button id="prevBtn" aria-label="Ảnh trước (Phím mũi tên trái)">← Trước</button>
+                <button id="playBtn" aria-label="Tự động phát slideshow (Phím Space)">Phát (Space)</button>
+                <button id="nextBtn" aria-label="Ảnh tiếp theo (Phím mũi tên phải)">Tiếp →</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="commandPalette" class="modal palette-modal" role="dialog" aria-modal="true" aria-label="Khung tìm kiếm lệnh" hidden>
+        <div class="palette-content">
+            <input type="text" id="paletteInput" placeholder="Tìm kiếm lệnh..." aria-autocomplete="list" aria-controls="paletteList">
+            <ul id="paletteList" role="listbox" aria-label="Danh sách lệnh gợi ý"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
