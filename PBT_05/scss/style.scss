@@ -1,0 +1,29 @@
+@use 'variables';
+@use 'mixins';
+@use 'components';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: variables.$font-primary;
+    background-color: variables.$bg-color;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: variables.$spacing-md;
+    padding: variables.$spacing-lg;
+
+    @include mixins.respond-to('tablet') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mixins.respond-to('desktop') {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

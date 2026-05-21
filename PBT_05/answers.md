@@ -168,3 +168,9 @@ Bảng kích thước `width` của `.container`:
     }
 }
 ```
+### Bài B3 — Lệnh biên dịch SCSS sang CSS
+
+Để biên dịch SCSS thành CSS, sử dụng lệnh sau trong Terminal (đảm bảo đã cài đặt Dart Sass):
+
+```bash
+sass scss/style.scss style.css
